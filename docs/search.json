@@ -7,24 +7,52 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/0102_python_controlflow_input_최석진.html",
+    "href": "posts/0102_python_controlflow_input_최석진.html",
+    "title": "조건문",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "파이썬은 indentation 4칸!"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
+    "objectID": "posts/0102_python_controlflow_input_최석진.html#반복문",
+    "href": "posts/0102_python_controlflow_input_최석진.html#반복문",
+    "title": "조건문",
+    "section": "반복문",
+    "text": "반복문\n\nfor\n\nhttps://docs.python.org/ko/3/tutorial/controlflow.html#for-statements\n\n\n# \"월화수목금토일\" 을 리스트 형태로 변경합니다.\nweekday = []\nfor wd in \"월화수목금토일\":\n    weekday.append(wd)\nweekday\n\n['월', '화', '수', '목', '금', '토', '일']\n\n\n\n# 리스트 안에 있는 값을 순회하며 반복문으로 출력해 보세요.\nweekday = ['월', '화', '수', '목', '금', '토', '일']\nfor wd in weekday:\n    print(wd)\n\n월\n화\n수\n목\n금\n토\n일\n\n\n\n\nrange() 함수\n\nhttps://docs.python.org/ko/3/tutorial/controlflow.html#the-range-function\nrange([초기치, ]최종치[, 증가치]) =&gt; [ ]안의 내용은 생략이 가능합니다.\n\n초기치를 생략하면 0이, 증가치를 생략하면 1이 기본값으로 사용됩니다.\nrange()함수는 초기치, 최종치, 증가치에 따른 숫자 리스트를 만들어 줍니다.\n\nrange(0, 10, 1) == range(10)입니다.\n\n\n# range로 범위를 지정해 반복문을 수행할 수 있습니다.\nfor i in range(10):\n    print(i)\n\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n\n\n\n# f-string 을 사용하여 특정 URL 페이지를 만들어 볼 수 있습니다.\n# 예) https://naver.com/?page=1\nfor page_no in range(1,11):\n    print(f\"http://naver.com/?page={page_no}\")\n\nhttp://naver.com/?page=1\nhttp://naver.com/?page=2\nhttp://naver.com/?page=3\nhttp://naver.com/?page=4\nhttp://naver.com/?page=5\nhttp://naver.com/?page=6\nhttp://naver.com/?page=7\nhttp://naver.com/?page=8\nhttp://naver.com/?page=9\nhttp://naver.com/?page=10\n\n\n\n# 리스트를 변수로 받아 순회할 수도 있지만 리스트의 길이만큼 range 값을 생성하여 순회할 수도 있습니다.\n\n\n# enumerate 를 사용하면 인덱스 번호와 값을 함께 가져올 수 있습니다.\nfor i,wd in enumerate(weekday):\n    print(i,wd)\n\n0 월\n1 화\n2 수\n3 목\n4 금\n5 토\n6 일\n\n\n\n\n조건문과 반복문 함께 사용하기\n\n# range로 값을 순회하며 짝수일 때는 \"짝수\"를 홀수일 때는 \"홀수\"를 출력하게 합니다.\nfor i in range(1,11):\n    if i%2==0:\n        print(i,i%2,\"짝수\")\n    else:\n        print(i,i%2,\"홀수\")\n\n1 1 홀수\n2 0 짝수\n3 1 홀수\n4 0 짝수\n5 1 홀수\n6 0 짝수\n7 1 홀수\n8 0 짝수\n9 1 홀수\n10 0 짝수\n\n\nif문은 for문 안에서 작동한다!\n\n\nwhile 문\n\n조건문이 참인 동안 순회하며 실행되기 때문에 특정 조건까지 반복문을 수행하고자 할때 사용합니다.\n예를 들어 특정 웹페이지를 순회한다면 내용이 없을 때까지 순회하라는 반복문을 구현할 수 있습니다.\n\n범위가 정해져있지 않을 때 사용!\n\n# 변수의 초깃값을 부여하고 특정 변수값이 되면 종료하도록 합니다.\ni=0\nwhile True:\n    i =i+1\n    print(i)\n    if i&gt;10:\n        break\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11"
+  },
+  {
+    "objectID": "posts/0102_python_controlflow_input_최석진.html#함수",
+    "href": "posts/0102_python_controlflow_input_최석진.html#함수",
+    "title": "조건문",
+    "section": "함수",
+    "text": "함수\n\nhttps://docs.python.org/ko/3/tutorial/controlflow.html#defining-functions\n\n\n# split_phone 이름을 갖는 전화번호 국번을 반환하는 함수를 만듭니다.\nnum = \"02-321-1234\"\n\n\nnum.split(\"-\")\n\n['02', '321', '1234']\n\n\n\ndef split_phone(num):\n    return num.split(\"-\")[0]\n\nsplit_phone(num)\n\n'02'\n\n\n\n# 문자열 전처리로 월을 반환하는 함수 만들기\ndate = \"2023년 04월 27일\"\n\n\n# 함수명 find_month \ndef find_month(date):\n    \"\"\"\n    월을 반환하는 함수\n    문자열을 split()을 사용해서 공백으로 나누고\n    결과리스트에서 1번원소를 가져와서 \"월\"이라는 텍스트를 제거해주고\n    int형식으로 변환해서 반환해주는 함수\n    \"\"\"\n    return int(date.split()[1].replace(\"월\",\"\"))\nfind_month(date)                                   \n\n4"
+  },
+  {
+    "objectID": "posts/0102_python_controlflow_input_최석진.html#함수의-도움말-보기",
+    "href": "posts/0102_python_controlflow_input_최석진.html#함수의-도움말-보기",
+    "title": "조건문",
+    "section": "함수의 도움말 보기",
+    "text": "함수의 도움말 보기\n\n# ? 문서보기\n# split_phone?\n\n\n# ??소스코드 보기\n# split_phone??"
+  },
+  {
+    "objectID": "posts/0102_python_controlflow_input_최석진.html#응용1",
+    "href": "posts/0102_python_controlflow_input_최석진.html#응용1",
+    "title": "조건문",
+    "section": "응용1",
+    "text": "응용1\n\nhttp://data.seoul.go.kr/dataList/OA-15248/F/1/datasetView.do\n월별 대여현황에서 연령대는 코드로 제공됩니다. 해당 코드를 값과 매핑하기 위해 딕셔너리 형태로 가공해 보는 연습을 합니다.\n다음의 형태가 되도록 만들어 주세요. 조건문과 반복문을 꼭 활용해 주어야 합니다.\n\n{'AGE_001': '10대',\n 'AGE_002': '20대',\n 'AGE_003': '30대',\n 'AGE_004': '40대',\n 'AGE_005': '50대',\n 'AGE_006': '60대',\n 'AGE_007': '70대',\n 'AGE_008': '기타'}\n\nage_code = \"\"\"\n10대 : AGE_001\n20대 : AGE_002\n30대 : AGE_003\n40대 : AGE_004\n50대 : AGE_005\n60대 : AGE_006\n70대 : AGE_007\n기타 : AGE_008\n( 비회원, 외국인, 그 이상 등 )\"\"\"\nage_code\n\n'\\n10대 : AGE_001\\n20대 : AGE_002\\n30대 : AGE_003\\n40대 : AGE_004\\n50대 : AGE_005\\n60대 : AGE_006\\n70대 : AGE_007\\n기타 : AGE_008\\n( 비회원, 외국인, 그 이상 등 )'\n\n\n\nage_code.split(\"\\n\")\n\n['',\n '10대 : AGE_001',\n '20대 : AGE_002',\n '30대 : AGE_003',\n '40대 : AGE_004',\n '50대 : AGE_005',\n '60대 : AGE_006',\n '70대 : AGE_007',\n '기타 : AGE_008',\n '( 비회원, 외국인, 그 이상 등 )']\n\n\n\nage_dict = {}\n\nfor a in age_code.split(\"\\n\"):\n    ages = a.split(\":\")\n    if len(ages) &gt; 1:\n        age_dict[ages[1].strip()] = ages[0].strip()\n        \nage_dict\n\n{'AGE_001': '10대',\n 'AGE_002': '20대',\n 'AGE_003': '30대',\n 'AGE_004': '40대',\n 'AGE_005': '50대',\n 'AGE_006': '60대',\n 'AGE_007': '70대',\n 'AGE_008': '기타'}"
+  },
+  {
+    "objectID": "posts/0102_python_controlflow_input_최석진.html#응용2---딕셔너리의-결과가-아래와-같이-나오도록-아래의-문자열을-변경해-보세요.",
+    "href": "posts/0102_python_controlflow_input_최석진.html#응용2---딕셔너리의-결과가-아래와-같이-나오도록-아래의-문자열을-변경해-보세요.",
+    "title": "조건문",
+    "section": "응용2 - 딕셔너리의 결과가 아래와 같이 나오도록 아래의 문자열을 변경해 보세요.",
+    "text": "응용2 - 딕셔너리의 결과가 아래와 같이 나오도록 아래의 문자열을 변경해 보세요.\n{'경기': '031',\n'강원': '033',\n'충남': '041',\n'충북': '043',\n'경북': '054',\n'경남': '055',\n'전남': '061',\n'전북': '063'}\n\n# 아래의 문자를 딕셔너리 형태로 변경하기\nphone = \"&gt;경기 031 &gt;강원 033 &gt;충남 041 &gt;충북 043 &gt;경북 054 &gt;경남 055 &gt;전남 061 &gt;전북 063\"\n# \"&gt;\" 문자를 기준으로 문자열을 나눕니다. =&gt; split() 으로 리스트로 변환\n# for문으로 리스트를 반복해서 phone_dict 에 채웁니다.\nphone.split(\"&gt;\")\n\n['',\n '경기 031 ',\n '강원 033 ',\n '충남 041 ',\n '충북 043 ',\n '경북 054 ',\n '경남 055 ',\n '전남 061 ',\n '전북 063']\n\n\n\nphone_dict={}\nfor ps in phone.split(\"&gt;\"):\n    pss=ps.split()\n    if len(pss)==2:\n        phone_dict[pss[0]]==pss[1]\n\nKeyError: '경기'\n\n\n\nphone_dict\n\n{}"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": ".",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nDec 28, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nDec 25, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "조건문\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
