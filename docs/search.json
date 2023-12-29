@@ -56,6 +56,104 @@
     "text": "응용2 - 딕셔너리의 결과가 아래와 같이 나오도록 아래의 문자열을 변경해 보세요.\n{'경기': '031',\n'강원': '033',\n'충남': '041',\n'충북': '043',\n'경북': '054',\n'경남': '055',\n'전남': '061',\n'전북': '063'}\n\n# 아래의 문자를 딕셔너리 형태로 변경하기\nphone = \"&gt;경기 031 &gt;강원 033 &gt;충남 041 &gt;충북 043 &gt;경북 054 &gt;경남 055 &gt;전남 061 &gt;전북 063\"\n# \"&gt;\" 문자를 기준으로 문자열을 나눕니다. =&gt; split() 으로 리스트로 변환\n# for문으로 리스트를 반복해서 phone_dict 에 채웁니다.\nphone.split(\"&gt;\")\n\n['',\n '경기 031 ',\n '강원 033 ',\n '충남 041 ',\n '충북 043 ',\n '경북 054 ',\n '경남 055 ',\n '전남 061 ',\n '전북 063']\n\n\n\nphone_dict={}\nfor ps in phone.split(\"&gt;\"):\n    pss=ps.split()\n    if len(pss)==2:\n        phone_dict[pss[0]]==pss[1]\n\nKeyError: '경기'\n\n\n\nphone_dict\n\n{}"
   },
   {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "",
+    "text": "삼성전자 : 네이버 금융"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#pandas만으로-데이터-수집하기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#pandas만으로-데이터-수집하기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "pandas만으로 데이터 수집하기",
+    "text": "pandas만으로 데이터 수집하기\n\n# pandas 불러오기\nimport pandas as pd"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#검색-값-설정하기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#검색-값-설정하기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "검색 값 설정하기",
+    "text": "검색 값 설정하기\n\n웹사이트에서 검색한 URL 안에 우리의 검색어가 들어가 있습니다.\n이렇게 검색어를 URL에 붙여서 넘기는 문구를 쿼리스트링이라고 부릅니다.\n이 문자열을 검색어에 맞게 변경해 줍니다.\n쿼리스트링 : 쿼리 문자열은 지정된 매개변수에 값을 할당하는 Uniform Resource Locator의 일부입니다. 쿼리 문자열에는 일반적으로 웹 브라우저나 기타 클라이언트 응용 프로그램에서 기본 URL에 추가한 필드가 포함됩니다.\n\n\n\nprint(\"https://finance.naver.com/item/news_news.nhn?code=005930&page=1&sm=title_entity_id.basic&clusterId=\")\n\nhttps://finance.naver.com/item/news_news.nhn?code=005930&page=1&sm=title_entity_id.basic&clusterId=\n\n\n\n# 수집할 url을 가져옵니다.\nitem_code = \"005930\"\nitem_name = \"삼성전자\"\npage_no = 1\n\n\n# url\npage_no=6\nurl=f\"https://finance.naver.com/item/news_news.nhn?code={item_code}&page={page_no}&sm=title_entity_id.basic&clusterId=\"\nprint(url)\n\nhttps://finance.naver.com/item/news_news.nhn?code=005930&page=6&sm=title_entity_id.basic&clusterId="
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#read_html-로-수집하기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#read_html-로-수집하기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "read_html 로 수집하기",
+    "text": "read_html 로 수집하기\n\n네이버 금융의 주가 기사를 read_html로 수집해서 table 이라는 변수에 담습니다.\n\n\n# 수집결과 는 table이라는 변수에 담아주세요.\n# table\ntable=pd.read_html(url)\nlen(table)\n\nImportError: lxml not found, please install it"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#데이터프레임으로-만들기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#데이터프레임으로-만들기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "데이터프레임으로 만들기",
+    "text": "데이터프레임으로 만들기\n\n위에서 수집한 결과 중 table 변수 안에 있는 0번째 인덱스 값을 가져와서 df 라는 변수에 담아주세요.\n\n\n# table의 0번째 인덱스 값을 df 라는 변수에 담습니다.\n# df"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#반복문으로-데이터-모두-가져오기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#반복문으로-데이터-모두-가져오기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "반복문으로 데이터 모두 가져오기",
+    "text": "반복문으로 데이터 모두 가져오기\n\nfor 문을 사용해 table 이라는 변수 안에 있는 값을 모두 가져오기\ntemp_list 에 수집한 값을 담아주세요.\n\n\n# temp_list = []\n# for news in table:"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#수집한-데이터-하나의-데이터프레임으로-합치기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#수집한-데이터-하나의-데이터프레임으로-합치기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "수집한 데이터 하나의 데이터프레임으로 합치기",
+    "text": "수집한 데이터 하나의 데이터프레임으로 합치기\n\n\nMerge, join, concatenate and compare documentation\nconcat :\n\naxis=0 행을 기준으로 위아래로 같은 컬럼끼리 값을 이어 붙여 새로운 행을 만듦\naxis=1 컬럼을 기준으로 인덱스가 같은 값을 옆으로 붙여 새로운 컬럼을 만듦\n\n\n\n# pd.concat"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#위에서-수집한-데이터에서-결측치를-제거합니다.",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#위에서-수집한-데이터에서-결측치를-제거합니다.",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "위에서 수집한 데이터에서 결측치를 제거합니다.",
+    "text": "위에서 수집한 데이터에서 결측치를 제거합니다.\n\n# dropna"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#네이버-수집한-기사에서-제목에-연관기사가-들어가는-데이터를-제거합니다.",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#네이버-수집한-기사에서-제목에-연관기사가-들어가는-데이터를-제거합니다.",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "네이버 수집한 기사에서 “제목”에 “연관기사”가 들어가는 데이터를 제거합니다.",
+    "text": "네이버 수집한 기사에서 “제목”에 “연관기사”가 들어가는 데이터를 제거합니다.\n\n.str.contains 를 사용하며 조건의 반대에는 앞에 ~ 표시로 표현할 수 있습니다."
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#위의-과정을-함수로-만듭니다.",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#위의-과정을-함수로-만듭니다.",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "위의 과정을 함수로 만듭니다.",
+    "text": "위의 과정을 함수로 만듭니다.\n\n빈칸을 완성해 수집한 table 을 넘겨주면 데이터프레임을 반환하는 함수를 완성해 주세요.\n\n\n# get_url item_code, page_no 를 넘기면 url 을 반환하는 함수\ndef get_url(item_code, page_no):\n    \"\"\"\n    item_code, page_no 를 넘기면 url 을 반환하는 함수\n    \"\"\""
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#뉴스-한-페이지를-수집하는-함수",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#뉴스-한-페이지를-수집하는-함수",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "뉴스 한 페이지를 수집하는 함수",
+    "text": "뉴스 한 페이지를 수집하는 함수\n    1) URL 을 받아옴\n    2) read_html 로 테이블 정보를 받아옴\n    3) 데이터프레임 컬럼명을 [\"제목\", \"정보제공\", \"날짜\"]로 변경\n    4) temp_list 에 데이터프레임을 추가\n    5) concat 으로 리스트 병합하여 하나의 데이터프레임으로 만들기\n    6) 결측치 제거\n    7) 연관기사 제거\n    8) 중복데이터 제거\n    9) 데이터프레임 반환\n\n# get_one_page_news 함수 만들기\ndef get_one_page_news(item_code, page_no):\n    \"\"\"\n    get_url 에 item_code, page_no 를 넘겨 url 을 받아오고\n    뉴스 한 페이지를 수집하는 함수\n    1) URL 을 받아옴\n    2) read_html 로 테이블 정보를 받아옴\n    3) 데이터프레임 컬럼명을 [\"제목\", \"정보제공\", \"날짜\"]로 변경\n    4) temp_list 에 데이터프레임을 추가\n    5) concat 으로 리스트 병합하여 하나의 데이터프레임으로 만들기\n    6) 결측치 제거\n    7) 연관기사 제거\n    8) 중복데이터 제거\n    9) 데이터프레임 반환\n    \"\"\"\n    \n\n\n아래 코드를 실행했을 때 수집된 데이터프레임이 출력된다면 잘 만들어진 것입니다.\n\n\npage_no = 2\n\ntemp = get_one_page_news(item_code, page_no)\ntemp"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#반복문을-사용해-10페이지까지-수집",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#반복문을-사용해-10페이지까지-수집",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "반복문을 사용해 10페이지까지 수집",
+    "text": "반복문을 사용해 10페이지까지 수집\n\n위에서 만든 함수를 활용합니다.\ntime.sleep() 을 통해 데이터를 쉬었다 가져옵니다.\n\n\nimport time\nfrom tqdm import trange\n\npage_no = 0\nnews_list = []"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#위에서-수집한-데이터는-news_list-라는-변수에-들어있습니다.-판다스를-활용해-하나의-데이터프레임으로-만들어-주세요.",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#위에서-수집한-데이터는-news_list-라는-변수에-들어있습니다.-판다스를-활용해-하나의-데이터프레임으로-만들어-주세요.",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "위에서 수집한 데이터는 news_list 라는 변수에 들어있습니다. 판다스를 활용해 하나의 데이터프레임으로 만들어 주세요.",
+    "text": "위에서 수집한 데이터는 news_list 라는 변수에 들어있습니다. 판다스를 활용해 하나의 데이터프레임으로 만들어 주세요.\n\nconcat :\n\naxis=0 행을 기준으로 위아래로 같은 컬럼끼리 값을 이어 붙여 새로운 행을 만듦\naxis=1 컬럼을 기준으로 인덱스가 같은 값을 옆으로 붙여 새로운 컬럼을 만듦\n\n\n\n# df_news"
+  },
+  {
+    "objectID": "posts/0103_naver_finance_news_scraping_input_최석진.html#파일로-저장하기",
+    "href": "posts/0103_naver_finance_news_scraping_input_최석진.html#파일로-저장하기",
+    "title": "네이버 금융 뉴스기사 수집",
+    "section": "파일로 저장하기",
+    "text": "파일로 저장하기\n\n\nfile_name = f\"news_{item_code}_{item_name}.csv\"\nfile_name\n\n\n# to_csv\n\n\n# read_csv"
+  },
+  {
     "objectID": "posts/가상환경 이야기.html",
     "href": "posts/가상환경 이야기.html",
     "title": "가상환경에 대한 이야기",
@@ -95,6 +193,6 @@
     "href": "index.html",
     "title": ".",
     "section": "",
-    "text": "조건문\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n가상환경에 대한 이야기\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n파이썬 개발환경의 변천사\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "네이버 금융 뉴스기사 수집\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n조건문\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n가상환경에 대한 이야기\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n파이썬 개발환경의 변천사\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
