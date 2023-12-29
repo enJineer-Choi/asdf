@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/0102_python_controlflow_input_최석진.html"
+      "/posts/0102_python_controlflow_input_최석진.html",
+      "/posts/가상환경 이야기.html",
+      "/posts/파이썬 개발환경 변천사.html"
     ]
   }
 ]

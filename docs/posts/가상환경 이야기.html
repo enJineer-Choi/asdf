@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>.</title>
+<title>. - 가상환경에 대한 이야기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,50 +65,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">.</span>
     </a>
   </div>
@@ -121,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -144,13 +111,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">.</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">가상환경에 대한 이야기</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       
     
@@ -158,96 +125,54 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p>최석진 2023-12-29</p>
+<blockquote class="blockquote">
+<p>최규빈 교수님의 2021 R입문 6주차 강의를 바탕으로 제작</p>
+</blockquote>
+<section id="가상환경-가상의-컴퓨터" class="level2">
+<h2 class="anchored" data-anchor-id="가상환경-가상의-컴퓨터">가상환경 ~= 가상의 컴퓨터</h2>
+<ul>
+<li>컴퓨터를 어떤 폴더들의 모임이라고 생각</li>
+</ul>
+</section>
+<section id="아나콘다-가상의-컴퓨터를-만들어주는-프로그램" class="level2">
+<h2 class="anchored" data-anchor-id="아나콘다-가상의-컴퓨터를-만들어주는-프로그램">아나콘다 = 가상의 컴퓨터를 만들어주는 프로그램</h2>
+<ol type="1">
+<li>아나콘다를 설치함과 동시에 가상환경 생성 (base)</li>
+<li>유저가 새로운 가상환경을 만드는 기능 제공
+<ul>
+<li>여러 폴더를 만들면 장점?/의미? -&gt; 패키지 설치 시 경로가 다름. 여러 패키지를 다른 환경에 설치가능</li>
+<li>install.packages() : Excel을 다운로드 / library() : Excel을 더블클릭하여 실행</li>
+<li>패키지를 설치하는 건 어떤 폴더를 특정 폴더에 넣는(?) 그런 느낌</li>
+</ul></li>
+</ol>
+</section>
+<section id="가상환경에-설치" class="level2">
+<h2 class="anchored" data-anchor-id="가상환경에-설치">가상환경에 설치</h2>
+<p>가상환경을 만드는 이유 : 패키지들의 충돌 발생 -&gt; 오픈소스의 특징(누구나 참여가능 -&gt; 누구나 본인이 만든것을 배포가능)</p>
+<p>ex) 기존에 존재하는 함수의 이름을 변경한다거나, 함수를 삭제하는 경우 : 그것을 기반으로 만든 다른 패키지들이 동작 X</p>
+</section>
+<section id="충돌-해결-방법" class="level2">
+<h2 class="anchored" data-anchor-id="충돌-해결-방법">충돌 해결 방법</h2>
+<p>아나콘다에서 채널의 의미 : 유사한 패키지들의 “커뮤니티”</p>
+<pre><code>conda install -c conda-forge</code></pre>
+<p>-&gt; conda-forge라는 채널에서 추천해주는 패키지들의 조합으로 설치하겠다는 의미</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1682771223507" data-listing-reading-time-sort="1" data-listing-word-count-sort="158">
-<div class="thumbnail">
-<p><a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external"></a></p><a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external">조건문</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external">파이썬은 indentation 4칸!</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external"></a></p><a href="./posts/0102_python_controlflow_input_최석진.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1703842637000" data-listing-reading-time-sort="1" data-listing-word-count-sort="132">
-<div class="thumbnail">
-<p><a href="./posts/가상환경 이야기.html" class="no-external"></a></p><a href="./posts/가상환경 이야기.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/가상환경 이야기.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/가상환경 이야기.html" class="no-external">가상환경에 대한 이야기</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/가상환경 이야기.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/가상환경 이야기.html" class="no-external">최석진 2023-12-29</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/가상환경 이야기.html" class="no-external"></a></p><a href="./posts/가상환경 이야기.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1703842957000" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623">
-<div class="thumbnail">
-<p><a href="./posts/파이썬 개발환경 변천사.html" class="no-external"></a></p><a href="./posts/파이썬 개발환경 변천사.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/파이썬 개발환경 변천사.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/파이썬 개발환경 변천사.html" class="no-external">파이썬 개발환경의 변천사</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/파이썬 개발환경 변천사.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/파이썬 개발환경 변천사.html" class="no-external">개발환경의 변천사, 1세대 프로그래머부터 5세대 프로그래머까지</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/파이썬 개발환경 변천사.html" class="no-external"></a></p><a href="./posts/파이썬 개발환경 변천사.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
